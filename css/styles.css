@@ -50,7 +50,7 @@ body {
 }
 
 .navbar .menu-right li:last-child {
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 /* vertical center */
