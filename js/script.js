@@ -46,7 +46,6 @@ $(window).on('scroll', displayContent);
 
 */
 
-//풀이
 function scrollHandler() {
     if($(window).scrollTop() >= $('.about').position().top) { 
         $('.menu-right button').css('color', '#4A4A4A');
@@ -84,5 +83,7 @@ $('.menu-right button').on('click', function() {
         $('html, body').animate({scrollTop: $('.about').offset().top}, 1000);
     } else if (id == "contact-btn") {
         $('html, body').animate({scrollTop: $('.contact').offset().top}, 1000);
+    } else if (id == "home-btn") {
+        $('html, body').animate({scrollTop: $('.header').offset().top}, 1000);
     }
 });

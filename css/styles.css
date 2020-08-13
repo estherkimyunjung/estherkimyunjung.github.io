@@ -33,6 +33,7 @@ body {
 
 .navbar .menu-right li {
   float: left;
+  margin-right: 30px;
 }
 
 .navbar .menu-right li button {
@@ -49,7 +50,7 @@ body {
 }
 
 .navbar .menu-right li:last-child {
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 /* vertical center */
