@@ -11,7 +11,8 @@ jQuery(window).load(function() {
 $(document).ready(function(){
 	
 	
-if (!(/android|blackberry|windows phone|iphone|ipod/i).test(navigator.userAgent.toLowerCase())) {
+
+	if (!(/android|blackberry|windows phone|iphone|ipod/i).test(navigator.userAgent.toLowerCase())) {
 
 		var header = $('.mainHeader'),
 			pos = header.offset();
@@ -28,7 +29,8 @@ if (!(/android|blackberry|windows phone|iphone|ipod/i).test(navigator.userAgent.
 				}
 		});
 
-}
+	}
+
 	
 	
 //------------------------------------- Navigation setup ------------------------------------------------//
@@ -38,23 +40,51 @@ $('a.scroll').smoothScroll({
         offset: -78
 });
 
+
+
+$('.showOffsetNav').click(function(e){
+	
+	e.preventDefault();
+		$('.wrapper').toggleClass('showNav');
+		$('.mainHeader').toggleClass('showNav');
+		$('.offestNavCanvas').toggleClass('showNav');
+
+	if($(this).hasClass('showNav')){
+		$('.wrapper').toggleClass('showNav');
+		$('.mainHeader').toggleClass('showNav');
+		$('.offestNavCanvas').toggleClass('showNav');
+		
+		
+	}
+	
+});
+
+
+
 //------------------------------------- End navigation setup ------------------------------------------------//
 
 
 
 //---------------------------------- Main slider setup-----------------------------------------//
 
+$('.teaser').flexslider({
+	animation: "fade",
+	slideshow: true,
+	directionNav:false,
+	controlNav: false,
+	animationSpeed: 1500
+});
 
 
-$('.teaser .slide li').css('height', $(window).height());
+$('.teaser .slides li').css('height', $(window).height());
 
 
-for(var i = 0; i < $('.teaser .slide li').length; i++){
+for(var i = 0; i < $('.teaser .slides li').length; i++){
 
-    var path = $('.teaser .slide li').eq(i).find('img.slide').attr('src');
-	$('.teaser .slide li').eq(i).addClass('parallax');
-    $('.teaser .slide li').eq(i).css('backgroundImage', 'url("' + path + '")');
-    $('.teaser .slide li').eq(i).find('img.slide').detach();
+    var path = $('.teaser .slides li').eq(i).find('img.slide').attr('src');
+	$('.teaser .slides li').eq(i).addClass('parallax');
+    $('.teaser .slides li').eq(i).css('backgroundImage', 'url("' + path + '")');
+    $('.teaser .slides li').eq(i).find('img.slide').detach();
 
 }
 
@@ -259,45 +289,6 @@ $('#submit').click(function(){
 //---------------------------------- End form validation-----------------------------------------//
 
 
-
-//--------------------------------- Mobile menu --------------------------------//
-
-
-var mobileBtn = $('.mobileBtn');
-	var nav = $('.mainNav');
-	var navHeight= nav.height();
-
-$(mobileBtn).click(function(e) {
-		e.preventDefault();
-		nav.slideToggle();
-		$('.mainNav li a').addClass('mobile');
-
-
-});
-
-$(window).resize(function(){
-		var w = $(window).width();
-		if(w > 320 && nav.is(':hidden')) {
-			nav.removeAttr('style');
-			$('.mainNav li a').removeClass('mobile');
-		}
-
-});
-
-
-
-$('.mainNav li a').click(function(){
-	if ($(this).hasClass('mobile')) {
-        nav.slideToggle();
-	}
-
-});
-
-
-//--------------------------------- End mobile menu --------------------------------//
-
-
-
 //--------------------------------- Twitter feed --------------------------------//
 
 
@@ -345,7 +336,6 @@ instaFeed.run();
 
 
 //---------------------------------- End instagram feed -----------------------------------------//
-
 
 
 });

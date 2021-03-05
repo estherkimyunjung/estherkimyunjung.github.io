@@ -81,6 +81,7 @@ html[xmlns] .slides {display: block;}
 
 /* Control Nav */
 .flex-control-nav {width: 100%; position: absolute; bottom:-40px; text-align: center;}
+.teaser .flex-control-nav {width: 100%; position: absolute; bottom:40px; text-align: center;}
 .flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
 .flex-control-thumbs li {width: 25%; float: left; margin: 0;}
 .flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
